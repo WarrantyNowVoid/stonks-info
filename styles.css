@@ -1,0 +1,59 @@
+html, body { height: 100%; }
+
+body.good-stonks{
+  background: url('bg-good.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right; 
+}
+
+body.bad-stonks{
+  background: url('bg-bad.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right; 
+}
+
+#stonksman{
+  height: 575px;
+  width: 397px;
+}
+
+body.good-stonks #stonksman{
+  background: url('stonksman-good.png');
+}
+
+body.bad-stonks #stonksman{
+  background: url('stonksman-bad.png');
+}
+
+#spokestonks{
+  font-size: 84px;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+   -1px -1px 10px #fff,  
+    1px -1px 10px #fff,
+    -1px 1px 10px #fff,
+     1px 1px 10px #fff,
+     0px 0px 40px #fff,
+     0px 0px 50px #fff,
+     0px 0px 60px #fff;
+}
+
+.font{
+  color: #fff;
+  font-family: Arial;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     1px 1px 10px #fff;
+}
+
+.font a{
+  color: #007bff;
+}
