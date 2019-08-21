@@ -1,4 +1,14 @@
-html, body { height: 100%; }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body { 
+  position: relative;
+  height: 100px; 
+  overflow: hidden;
+}
 
 body.good-stonks{
   background: url('bg-good.jpg');
@@ -15,20 +25,33 @@ body.bad-stonks{
 }
 
 #stonksman{
-  height: 575px;
-  width: 397px;
+  position: absolute;
+  top: 100vh;
+  left: 5%;
+  margin-top: -87vh;
+  height: 90vh;
+  width: 100%;
 }
 
 body.good-stonks #stonksman{
   background: url('stonksman-good.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left; 
 }
 
 body.bad-stonks #stonksman{
   background: url('stonksman-bad.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left; 
 }
 
 #spokestonks{
-  font-size: 84px;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  font-size: 134px;
   text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
@@ -38,9 +61,13 @@ body.bad-stonks #stonksman{
     1px -1px 10px #fff,
     -1px 1px 10px #fff,
      1px 1px 10px #fff,
-     0px 0px 40px #fff,
+   -1px -1px 20px #fff,  
+    1px -1px 20px #fff,
+    -1px 1px 20px #fff,
+     1px 1px 20px #fff,
      0px 0px 50px #fff,
-     0px 0px 60px #fff;
+     0px 0px 70px #fff,
+     0px 0px 80px #fff;
 }
 
 .font{
@@ -51,9 +78,32 @@ body.bad-stonks #stonksman{
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000,
-     1px 1px 10px #fff;
+     0px 0px 5px #fff;
 }
 
 .font a{
   color: #007bff;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  #stonksman{
+    margin-top: -47vh;
+    height: 50vh;
+  }
+  #spokestonks{
+    font-size: 84px;
+    top: 30%;
+  }
+}
+
+@media(min-width: 1199px){
+  #spokestonks{
+    font-size: 184px;
+  }
+}
+
+@media(min-width: 1499px){
+  #spokestonks{
+    font-size: 284px;
+  }
 }
