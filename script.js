@@ -23,7 +23,7 @@ var getChangeScale = function(changePercent){
     }
   }
 
-  throw "AHHHHH WHAT THE FUUUUUUCK";
+  throw "AHHHHH WHAT THE FUUUUUUCK: " + changePercent;
 }
 
 var fixHeights = function(){
@@ -32,7 +32,7 @@ var fixHeights = function(){
 }
 
 var fetchStonks = function(){ 
-  $.get(endpoint, function(data){
+  $.getJSON(endpoint, function(data){
     updateStonks((((data.current - data.last_close) / data.last_close) * 100).toFixed(2));
   });
 }
