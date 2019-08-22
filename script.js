@@ -1,3 +1,4 @@
+var refresh = 60000; // 1 min, the fastest current.json will update
 var threshholds = {
   "NONE": [-Infinity, 0],
   "LOW": [0.01, 0.7],
@@ -51,8 +52,10 @@ var updateStonks = function(changePercent){
     $("body").addClass(stonksClass);
     $("body.init canvas").addClass("animated").addClass("bounceOutUp");
     $("body.init canvas").on("animationend", function() {
+      space.stop();
+      space.removeAll();
+      $("body.init canvas").remove();
       $("body").removeClass("init");
-      $("body.init canvas").parent("div").remove();
 
       $("#stonksman").addClass("animated").addClass("rollIn");
       $("#stonksman").show();
@@ -60,7 +63,7 @@ var updateStonks = function(changePercent){
         $("#stonksman").removeClass().addClass(shakeClass).addClass("shake-constant");
       });
     });
-    window.setInterval(fetchStonks, 10000);
+    window.setInterval(fetchStonks, refresh);
   }else{
     $("body").removeClass().addClass(stonksClass);
     $("#stonksman").removeClass().addClass(shakeClass).addClass("shake-constant");
