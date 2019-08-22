@@ -2,16 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width, height=device-height" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, width=device-width, height=device-height" />
     <meta name="description" content="Information about Stonks">
-    <meta name="keywords" content="stonks, stonk market, investment advice, daw jones investrial average">
+    <meta name="keywords" content="stonks, stonk market, investment advice, daw jones investrial average, financial tool, finances, investing">
 
     <title>Stonks.info - Info about Stonks</title>
+
+    <!-- Icons, I hate you -->
+    <link rel="icon" sizes="192x192" href="icon-192.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="icon-180.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon-144.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon-114.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon-72.jpg">
+    <link rel="apple-touch-icon-precomposed" href="icon-57.jpg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="application-name" content="Stonks.info - Information about Stonks" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <meta name="theme-color" content="#0C229C">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stonks.info - Information about Stonks">
+    <meta name="twitter:description" content="Do you want to know how the stonks are doing? This website will tell you how the stonks are doing. Please, look at it. It is full of stonks information.">
+    <meta name="twitter:site" content="@warrantynowvoid">
+    <meta name="twitter:image" content="https://stonks.info/preview.jpg">
+    <!-- Open Graph -->
+    <meta property="og:image" content="https://stonks.info/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    <meta property="og:title" content="Stonks.info - Information about Stonks">
+    <meta property="og:description" content="Do you want to know how the stonks are doing? This website will tell you how the stonks are doing. Please, look at it. It is full of stonks information.">
+    <meta property="og:url" content="https://stonks.info">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Stonks.info - Information about Stonks">
+
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" href="animate.css">
 
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/williamngan/pts/dist/pts.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="script.js"></script>
 
     <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
@@ -24,17 +58,17 @@
       m=f.getElementsByTagName('script')[0];
       o.async=1; o.src=t; o.id='fathom-script';
       m.parentNode.insertBefore(o,m)
-    })(document, window, '//osto.us/tracker.js', 'fathom');
+    })(document, window, '//osto.us/fathom/tracker.js', 'fathom');
     fathom('set', 'siteId', 'GXMGJ');
     fathom('trackPageview');
     </script>
     <!-- / Fathom -->
   </head>
 
-  <body class="good-stonks">
+  <body class="init">
     <main>
-      <section id="stonksman" class="shake-hard shake-constant"></section>
-      <section id="spokestonks" class="font">stonks</section>
+      <section id="stonksman"></section>
+      <section id="spokestonks" class="font">loading<br />stonks...</section>
     </main>
 
     <footer class="font">

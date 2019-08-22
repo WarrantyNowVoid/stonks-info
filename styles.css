@@ -6,8 +6,13 @@
 
 html, body { 
   position: relative;
-  height: 100px; 
+  height: 100vh;
   overflow: hidden;
+}
+
+body.init canvas{
+  height: 100vh;
+  width: 100vw;
 }
 
 body.good-stonks{
@@ -82,7 +87,7 @@ body.bad-stonks #stonksman{
 }
 
 .font a{
-  color: #007bff;
+  color: #fc7d28;
 }
 
 @media (max-aspect-ratio: 1/1) {
