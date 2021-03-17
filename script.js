@@ -1,4 +1,5 @@
 var refresh = 60000; // 1 min, the fastest current.json will update
+var stonksplainerVisible = false;
 var threshholds = {
   "NONE": [-Infinity, 0],
   "LOW": [0.01, 0.7],
@@ -33,7 +34,7 @@ var fixHeights = function(){
 
 var fetchStonks = function(){ 
   $.getJSON(endpoint, function(data){
-    updateStonks((((data.current - data.last_close) / data.last_close) * 100).toFixed(2));
+    updateStonks(data.percent_change.toFixed(2));
   });
 }
 
@@ -73,6 +74,7 @@ var updateStonks = function(changePercent){
 $(window).resize(function(){ fixHeights(); });
 
 $(document).ready(function(){
+  $.ajaxSetup({ cache: false });
   fixHeights();
   // make sure we have a second (or two) to load everything first
   window.setTimeout(fetchStonks, 2000);
@@ -121,4 +123,29 @@ $(document).ready(function(){
   });
 
   space.play();
+
+  $("#stonksplain").click(function(eo){
+    eo.preventDefault();
+    if(stonksplainerVisible){
+      return false;
+    }
+
+    stonksplainerVisible = true;
+    $("#stonksplainer").removeClass().addClass("animated").addClass("lightSpeedIn").show();
+  });
+
+  $("p#close > a").click(function(eo){
+    eo.preventDefault();
+    if(!stonksplainerVisible){
+      return false;
+    }
+
+    $("#stonksplainer").removeClass().addClass("animated").addClass("hinge");
+    $("#stonksplainer").on("animationend", function(){
+      $("#stonksplainer").removeClass();
+      $("#stonksplainer").hide();
+      stonksplainerVisible = false;
+      $("#stonksplainer").unbind();
+    });
+  });
 });

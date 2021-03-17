@@ -29,6 +29,53 @@ body.bad-stonks{
   background-position: bottom right; 
 }
 
+#stonksplainer{
+  position: absolute;
+  width: 400px;
+  top: 10vh;
+  left: 50vw;
+  margin-left: -200px;
+  padding: 5px;
+  background: #0C229C;
+  color: #fff;
+  font-family: Arial;
+  border: 2px solid black;
+  box-shadow: 
+   -1px -1px 10px #fff,  
+    1px -1px 10px #fff,
+    -1px 1px 10px #fff,
+     1px 1px 10px #fff,
+   -1px -1px 20px #fff,  
+    1px -1px 20px #fff,
+    -1px 1px 20px #fff,
+     1px 1px 20px #fff,
+     0px 0px 50px #fff,
+     0px 0px 70px #fff,
+     0px 0px 80px #fff;
+}
+
+#stonksplainer p{
+  margin: 20px;
+}
+
+#stonksplainer p#close{
+  text-align: center;
+}
+
+#stonksplainer p#close > a{
+  text-decoration: none;
+  color: #000;
+  text-shadow: 
+   -1px -1px 5px #fff,  
+    1px -1px 5px #fff,
+    -1px 1px 5px #fff,
+     1px 1px 5px #fff;
+}
+
+#stonksplainer p#close > a:hover{
+  color: #0C229C;
+}
+
 #stonksman{
   position: absolute;
   top: 100vh;
@@ -111,4 +158,8 @@ body.bad-stonks #stonksman{
   #spokestonks{
     font-size: 284px;
   }
+}
+
+.hidden{
+  display: none;
 }

@@ -48,21 +48,7 @@
 
     <script type="text/javascript" src="script.js"></script>
 
-    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-    <script>
-    (function(f, a, t, h, o, m){
-      a[h]=a[h]||function(){
-        (a[h].q=a[h].q||[]).push(arguments)
-      };
-      o=f.createElement('script'),
-      m=f.getElementsByTagName('script')[0];
-      o.async=1; o.src=t; o.id='fathom-script';
-      m.parentNode.insertBefore(o,m)
-    })(document, window, '//osto.us/fathom/tracker.js', 'fathom');
-    fathom('set', 'siteId', 'GXMGJ');
-    fathom('trackPageview');
-    </script>
-    <!-- / Fathom -->
+    <script async defer data-domain="stonks.info" src="https://plausible.io/js/plausible.js"></script>
   </head>
 
   <body class="init">
@@ -72,8 +58,20 @@
     </main>
 
     <footer class="font">
-      Made in 2019 by the same unbelievable idiots who run <a href="https://warrantynowvoid.com">Warranty Now Void</a>.
+      Made in 2019 by the same unbelievable idiots who run <a href="https://warrantynowvoid.com">Warranty Now Void</a>.<br />
+      <br />
+      <a id="stonksplain" href="#">Wtf am I looking at?</a>
     </footer>
+
+    <section id="stonksplainer" class="hidden">
+        <p>The Stonksman is the most powerful investor ever. He has a strong psychic link to the Dow Jones Industrial Average, which he uses to show us how it's doing.</p>
+        
+        <p>Every 60 seconds, he graciously uses this power to tell us whether it's up or down since the previous day. Stonks are good when it's up, and bad when it's down. The bigger the change, the more he shakes either in fear or happiness.</p>
+
+        <p>We thank the Stonksman for his generous work.</p>
+
+        <p id="close"><a href="#">close</a></p>
+    </section>
   </body>
 
 </html>
