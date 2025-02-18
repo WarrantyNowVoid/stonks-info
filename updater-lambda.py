@@ -4,17 +4,33 @@ import urllib3
 
 s3 = boto3.client('s3')
 
-endpoint = 'https://api.twelvedata.com/quote?symbol=DJI&apikey=6affe6c8a0bc42b9a6fd2f86a457e692'
+endpoint = 'https://data.alpaca.markets/v2/stocks/SPY/snapshot'
 
 def lambda_handler(event, context):
-    print("Received event: " + json.dumps(event, indent=2))
-
     http = urllib3.PoolManager()
-    req = http.request('GET', endpoint)
+    headers = {
+        'Accept': 'application/json',
+        'APCA-API-KEY-ID': 'lolimnottellingyougetyourownitsfree',
+        'APCA-API-SECRET-KEY': 'hunter2'
+    }
+    req = http.request('GET', endpoint, headers=headers)
     json_data = json.loads(req.data)
 
-    extracted_data = {
-        "percent_change": float(json_data["percent_change"])
-    }
+    print("API response: " + json.dumps(json_data, indent=2))
 
-    s3.put_object(Bucket='stonks.info', Key='current.json', Body=bytes(json.dumps(extracted_data).encode('UTF-8')))
+    if all(k in json_data.keys() for k in ["dailyBar", "prevDailyBar"]):
+        
+        prev_close = float(json_data["prevDailyBar"]["c"])
+        curr_close = float(json_data["dailyBar"]["c"])
+        pchange = (100 * (curr_close - prev_close) / prev_close)
+
+        extracted_data = {
+            "percent_change": pchange
+        }
+
+        print("Saving extracted data: " + json.dumps(extracted_data, indent=2))
+
+        s3.put_object(Bucket='stonks.info', Key='current.json', Body=bytes(json.dumps(extracted_data).encode('UTF-8')))
+    else:
+        print("Error repsonse, quitting")
+    
